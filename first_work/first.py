@@ -125,7 +125,16 @@ at = [[1, 2, 3], [2, 3, 4], [1, 2, 7], [4, 2, 1], [1, 1, 1], [2, 4, 0]]
 at1 = [[1, 1, 3], [4, 1, 4], [3, 4, 6], [0, 1, 2], [1, 2, 0]]
 
 
-# print(euclid_distance(imgs[0].getdata(), imgs[1].getdata()))
+# 3.1 & 3.2 & 3.3
+
+print('\n\n3.1 & 3.2 & 3.3')
+
+#
+# Explanation to 3.3.
+# Using Euclid, Minkowski, and Abs methods in above examples shows us, mostly, the same values, and
+# in compare with other methods it shows quite high and imprecise values, especially, Abs.
+#
+
 for o in range(len(at1) - 1):
     print('\n\n-------------------')
 
@@ -141,15 +150,12 @@ for o in range(len(at1) - 1):
     print('Abs with weight: ', abs_distance(at[o], at1[o], 1.25))
     print('Camberro: ', camberro_distance(at[o], at1[o]))
     print('Camberro (lib): ', distance.canberra(at[o], at1[o]))
-
-    x1 = [1, 7, 1, 6, 2]
-    x2 = [1, 1, 7, 1, 10]
     print('Kendall distance: ', kendall_d2(at[o], at1[o]))
     print('Chebyshev: ', chebyshev_distance(at[o], at1[o]))
     print('Chebyshev (lib): ', distance.chebyshev(at[o], at1[o]))
 
 # 3.4
-
+print('\n\n3.4')
 x = [[1, 2, 3, 7, 8, 9], [1, 2, 3, 7, 8, 9], [2, 6, 1, 2, 4, 8]]
 x1 = [[1, 2, 3, 7, 8, 9], [9, 8, 7, 3, 2, 1], [0, 2, 3, 2, 4, 9]]
 
@@ -158,37 +164,36 @@ print(kendall_d2(x[1], x1[1]))
 print(kendall_d2(x[2], x1[2]))
 
 # 3.5
-
+print('\n\n3.5')
 x = [[1, 1, 3, 4, 5, 9], [1, 2, 3, 7, 8, 9], [2, 6, 1, 2, 4, 8]]
 x1 = [[1, 2, 3, 7, 8, 9], [3, 3, 2, 3, 2, 1], [1, 2, 3, 4, 5, 7]]
 
 print(chebyshev_distance(x[0], x1[2]))
 
 # 3.6
+print('\n\n3.6')
 
 x = [[1, 2, 3, 4, 5, 9], [1, 2, 3, 4, 5, 6], [1, 6, 1, 2, 4, 8]]
 x1 = [[1, 2, 3, 4, 5, 9], [1, 2, 3, 3, 2, 1], [1, 2, 3, 4, 5, 7]]
 
-print(chebyshev_distance(x[0], x1[0]))
-print(kendall_d2(x[0], x1[0]))
+print('Chebyshev: ', chebyshev_distance(x[0], x1[0]))
+print('Kendall: ', kendall_d2(x[0], x1[0]))
 
-
+# print(kendall_distance(nt, nt1))
+# print(kendall_distance(at, at1))
+# for i in range(len(at) - 1):
+#     coef, p = kendalltau(at[i], at[i + 1])
+#     print(p)
+#     print(distance.chebyshev(at[i], at[i + 1]))
+# for zx in range(len(at) - 1):
+#     print(distance.chebyshev(at[zx], at[zx+1]))
+#     print(chebyshev_distance(at[zx], at[zx+1]))
 #
-print(minkowski_distance(imgs[0].getdata(), imgs[1].getdata(), .25))
-print(kendall_distance(nt, nt1))
-print(kendall_distance(at, at1))
-for i in range(len(at) - 1):
-    coef, p = kendalltau(at[i], at[i + 1])
-    print(p)
-    print(distance.chebyshev(at[i], at[i + 1]))
-for zx in range(len(at) - 1):
-    print(distance.chebyshev(at[zx], at[zx+1]))
-    print(chebyshev_distance(at[zx], at[zx+1]))
-
-print(euclid_distance(at, at1))
+# print(euclid_distance(at, at1))
 
 
 # lab 1.2
+print('\n\n----------------Task 1.2----------------\n\n')
 
 
 def calc_a(Xi, Xj):
@@ -285,6 +290,7 @@ ri = [
 
 
 # 3.1
+print('\n\n3.1')
 
 print('Russel and Rao similarity function: ', russell_rao_sim_fun(fr[1], fr[2]))
 print('Jokard and Needman similarity function: ', jokard_needman_sim_fun(fr[1], fr[2]))
@@ -295,6 +301,8 @@ print('Kulzhinsky similarity function: ', kulzhinsky_sim_fun(fr[1], fr[2]))
 print('Yula similarity function: ', yula_sim_fun(fr[1], fr[2]))
 
 # 3.2 & 3.3
+print('\n\n3.2 & 3.3')
+
 def my_sim_fun(Xi, Xj):
     return calc_a(Xi, Xj) / (calc_a(Xi, Xj) + (calc_g(Xi, Xj) + calc_h(Xi, Xj)))
 
@@ -314,6 +322,7 @@ for i in range(len(ri)):
         print('My similarity function: ', my_sim_fun(ri[i], fr[j]))
 
 # 3.4
+print('\n\n3.4')
 
 tm = [
     [1, 1, 1],
@@ -329,7 +338,7 @@ print('Russel and Rao similarity function max_value: ', russell_rao_sim_fun(tm[0
 print('Russel and Rao similarity function min_value: ', russell_rao_sim_fun(tm[1], tm1[1]))
 
 # 3.5
-
+print('\n\n3.5')
 hm = [
     [1, 1, 1],
     [1, 0, 1],
@@ -342,7 +351,8 @@ hm1 = [
     [0, 1, 1],
 ]
 
-3.6
+#3.6
+print('\n\n3.6')
 
 tm = [
     [1, 1, 1],
@@ -360,7 +370,11 @@ print(hamming_distance(tm[1], tm1[1]))
 print(russell_rao_sim_fun(tm[1], tm1[1]))
 
 # lab 1.3
+print('\n\n----------------Task 1.3----------------\n\n')
 # 3.1
+
+print('\n\n3.1 & 3.2 & 3.3 & 3.4')
+
 
 def recognition_by_vector_corner(S, X):
     s = 0.0
